@@ -23,17 +23,22 @@ class StaffsList extends Component {
 
     renderStaff(staff) {
         if (staff != null) {
+            console.log(staff.image)
             return (
-                <div>
-                    <h3>Họ và tên: {staff.name}</h3>
-                    <p>Ngày sinh: {dateFormat(staff.doB,"dd/mm/yyyy")}</p>
-                    <p>Ngày vào công ty: {dateFormat(staff.startDate,"dd/mm/yyyy")}</p>
-                    <p>Phòng ban: {staff.department.name}</p>
-                    <p>Số ngày nghỉ còn lại: {staff.annualLeave}</p>
-                    <p>Số ngày đã làm thêm: {staff.overTime}</p>
+                <div className="row border p-3">
+                    <div className="col-6">
+                        <h3>Họ và tên: {staff.name}</h3>
+                        <p>Ngày sinh: {dateFormat(staff.doB,"dd/mm/yyyy")}</p>
+                        <p>Ngày vào công ty: {dateFormat(staff.startDate,"dd/mm/yyyy")}</p>
+                        <p>Phòng ban: {staff.department.name}</p>
+                        <p>Số ngày nghỉ còn lại: {staff.annualLeave}</p>
+                        <p>Số ngày đã làm thêm: {staff.overTime}</p>
+                    </div>
+                    <div className="col-6">
+                        <img width='50%' src={ staff.image} alt={staff.name}></img>
+                    </div>
                 </div>
             )
-
         } else {
             return (
                 <div></div>
@@ -58,9 +63,7 @@ class StaffsList extends Component {
                 <div className="row">
                     {list}
                 </div>
-                <div className="row">
-                    {this.renderStaff(this.state.selectedStaff)}
-                </div>
+                {this.renderStaff(this.state.selectedStaff)}
             </div>
         )
     }
