@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import dateFormat from "dateformat";
+import { Button } from "reactstrap";
 
 class StaffsList extends Component {
 
@@ -8,7 +9,12 @@ class StaffsList extends Component {
 
         this.state = {
             selectedStaff: null,
+            column : "col-sm-12 col-md-6 col-lg-4"
         }
+    }
+
+    setColumn(col) {
+        this.setState({ column: col });
     }
 
     onStaffSelect(staff) {
@@ -38,13 +44,17 @@ class StaffsList extends Component {
     render() {
         const list = this.props.staffs.map((staff) => {
             return (
-                <div key={staff.id} className="col-12 col-md-5 m-1">
+                <div key={staff.id} className={this.state.column}>
                     <p onClick={()=>this.onStaffSelect(staff)} className="border p-2">{staff.name}</p>
                 </div>
             )
         })
         return (
             <div className="container">
+                <Button onClick={()=>this.setColumn("col-12")} color='primary m-3'>Hiển thị 1 Cột</Button>
+                <Button onClick={()=>this.setColumn("col-6")} color='primary m-3'>Hiển thị 2 Cột</Button>
+                <Button onClick={()=>this.setColumn("col-3")} color='primary m-3'>Hiển thị 4 Cột</Button>
+                <Button onClick={()=>this.setColumn("col-2")} color='primary m-3'>Hiển thị 6 Cột</Button>
                 <div className="row">
                     {list}
                 </div>
