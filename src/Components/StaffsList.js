@@ -13,7 +13,7 @@ function RenderStaffs({ staff, onClick }) {
     )
  }
 
-const StaffLists = (props) => {
+const StaffsList = (props) => {
 
     const list = props.staffs.map((staff) => {
         return (
@@ -39,4 +39,4 @@ const StaffLists = (props) => {
     )
 }
 
-export default StaffLists;
+export default StaffsList;
