@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import StaffsList from "./StaffsList";
 import StaffDetail from "./StaffDetail";
 import PhongBan from "./phongban";
+import BangLuong from "./BangLuong";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 
@@ -37,6 +38,7 @@ class Main extends React.Component{
                     <Route exact path='/nhanvien' component={() => <StaffsList staffs={this.state.staffs} />} />
                     <Route path='/nhanvien/:staffId' component={StaffWithId} />
                     <Route path='/phongban' component={() => <PhongBan departments={this.state.departments} />} />
+                    <Route path='/bangluong' component={()=><BangLuong staffs={this.state.staffs} />} />
                     <Redirect to='/nhanvien' />
                 </Switch>
                 <Footer />

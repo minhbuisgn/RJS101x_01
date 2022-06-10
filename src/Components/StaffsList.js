@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 function RenderStaffs({ staff, onClick }) {
     return (
-        <Card>
+        <Card className='p-2'>
             <Link to={`/nhanvien/${staff.id}`}>
                 <img src={staff.image} width='100%' alt={staff.name}></img>
-                <CardText className='text-center text-dark'>{staff.name}</CardText>
+                {/* <CardText className='text-center text-dark'>{staff.name}</CardText> */}
+                <h5 className="text-center text-dark">{staff.name}</h5>
             </Link>
         </Card>
     )
@@ -28,7 +29,7 @@ const StaffsList = (props) => {
             <div className="row">
                 <div className="col-12">
                     <br/>
-                    <h3>Danh Sách Nhân Viên</h3>
+                    <h3>DANH SÁCH NHÂN VIÊN</h3>
                     <hr />
                 </div>
             </div>
