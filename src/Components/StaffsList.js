@@ -2,12 +2,11 @@ import React from "react";
 import { Card, CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderStaffs({ staff, onClick }) {
+function RenderStaffs({staff}) {
     return (
         <Card className='p-2'>
             <Link to={`/nhanvien/${staff.id}`}>
                 <img src={staff.image} width='100%' alt={staff.name}></img>
-                {/* <CardText className='text-center text-dark'>{staff.name}</CardText> */}
                 <h5 className="text-center text-dark">{staff.name}</h5>
             </Link>
         </Card>

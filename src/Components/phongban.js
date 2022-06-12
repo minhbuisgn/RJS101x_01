@@ -26,7 +26,7 @@ const PhongBan = (props) => {
             </div>
             <h3>DANH SÁCH PHÒNG BAN</h3>
             <hr />
-            <div className="row">
+            <div className="row my-4">
                 {list}
             </div>
         </div>
