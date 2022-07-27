@@ -25,7 +25,7 @@ export default class Header extends React.Component {
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className='mr-3' href='/'>
-                            Ứng dụng quản lý nhân sự v2.0
+                            Ứng dụng quản lý nhân sự v3.0
                         </NavbarBrand>
                         <Collapse isOpen={this.state.openStatus} navbar>
                             <Nav navbar>
